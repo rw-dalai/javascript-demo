@@ -16,7 +16,7 @@
 
 
 
-// 2. DataTypes / Variables
+// 2. DataTypes
 // --------------------------------------------------------
 
 // Primitive Types
@@ -80,10 +80,11 @@
 // const enabled3 = new Boolean(true);
 
 
-// 5. Type Conversion and Coercion in JavaScript
+
+// 4. Type Conversion and Coercion
 // --------------------------------------------------------
 
-// - Converting between types
+// 4a Converting
 
 // const str = "42";
 // console.log(typeof str); // "string"
@@ -93,12 +94,14 @@
 
 // let num = 42;
 // console.log(typeof str); // "number"
-// const str2 = String(str);
 // const str = num.toString();
+// const str2 = String(str);
 // console.log(typeof str); // "string"
 
+// 4b Coercion
+
 // - Coercion to String
-// const str = 42 + "";
+// const str = "42" + 42;
 
 // Coercion to Number
 // const num = "42" - 42;
@@ -110,13 +113,14 @@
 
 // == vs ===
 // == compares values (using type coercion)
-// 42 == "42" // true
+// "42" == 42 // true
 
 // === compares values and types (strict equality)
-// 42 === "42" // false
+// "42" === 42 // false
 
 
-// 3. String Functions
+
+// 5. String Functions
 // --------------------------------------------------------
 
 // const name = "Rene";
@@ -149,7 +153,7 @@
 // substring
 // console.log(name.substring(2, 4)); // "ne"
 
-// AUFGABE 2
+// AUFGABE 1
 // Filename.Extension
 // const filename = "music.mp3";
 // const index = filename.indexOf('.');
@@ -160,7 +164,8 @@
 // console.log('extension', extension);
 
 
-// 4. String Interpolation
+
+// 6. String Interpolation
 // --------------------------------------------------------
 
 // const name = "Rene";
@@ -168,13 +173,15 @@
 // console.log(`Hello, my name is ${name} and I am from ${country}`);
 
 
-// 6. Function
+
+// 7. Functions
 // --------------------------------------------------------
 // Function is a block of code that can be called and executed later.
 // Function can take parameters and return a value.
 // Function can be assigned to a variable, passed as an argument, and returned from other functions.
 // That's the reason why JavaScript is called a functional programming language.
 // Functions are first-class citizens in JavaScript.
+// Methods are not first-class citizens in Java.
 
 // Function declaration
 // function myFunction() {
@@ -184,8 +191,6 @@
 // Function call
 // myFunction();
 
-
-
 // AUFGABE 2
 // Lesen Sie zwei zahlen über das `prompt` ein und rufen Sie `add` zum addieren auf.
 // Geben Sie das Ergebnis in ein `alert` aus.
@@ -194,11 +199,3 @@
 // prompt() -> string
 // alert() -> void
 
-
-
-// Property Access -------------------
-// via dot notation
-
-// via bracket notation
-
-// non-existing property

@@ -5,24 +5,15 @@
 
 // window
 //   global object, represents the browser window
-//   window.document,
-//   window.location,
-//   window.history,
-//   window.navigator
-//   window.screen
+//   (window.document, window.location, window.history, ...)
 
 // document
 //   contains the DOM, initialized by parsing HTML
+//   (document.head, document.body, ...)
 
 // DOMContentLoaded
 //   event fires when the initial HTML document has been completely loaded and parsed,
 //   without waiting for stylesheets, images, and subframes to finish loading.
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   const $button = document.getElementById('btn');
-//   console.log('button', $button);
-// });
-
 
 window.addEventListener("load", (event) => {
   console.log("load", event);
