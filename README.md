@@ -2,7 +2,7 @@
 
 ## 1. JavaScript Language
 
-## 2. DataTypes
+## 2. Data Types
 
 ## 3. Variable Declaration
 

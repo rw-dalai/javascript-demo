@@ -14,7 +14,7 @@
 // - Strongly typed means that the type of variable cannot change
 
 
-// 2. DataTypes
+// 2. Data Types
 // --------------------------------------------------------
 // Primitive Types
 // - null
