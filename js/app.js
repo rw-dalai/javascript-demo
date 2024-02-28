@@ -45,7 +45,6 @@
 // var declares a variable (old way, hoisted)
 // var dont = 1;
 //
-//
 // Declaration
 // let x; // undefined
 //
@@ -56,7 +55,6 @@
 // Re-Assignment
 // x = "Rene"
 // console.log('x', x); // "Rene"
-//
 //
 // Numbers
 // const number = 1; // Literal Syntax (preferred)
@@ -127,42 +125,43 @@
 // 6. String Functions
 // --------------------------------------------------------
 // const name = "Rene";
-// const nameWithSpaces = " Rene ";
 //
-// charAt
+// - charAt
 // console.log(name.charAt(0)); // "R"
 // console.log(name[0]); // "R"
 //
-// equals
+// - equals
 // console.log(name === new String("Rene")); // false
 // console.log(name === String("Rene")); // true
 // new String("Rene") === String("Rene") // false
 //
-// length
+// - length
 // console.log(name.length); // 4
 //
-// trim
-// console.log(nameWithSpaces.trim().length); // 4
+// - trim
+// console.log(" Rene ".trim().length); // 4
 //
-// toUpperCase
+// - toUpperCase
 // console.log(name.toUpperCase()); // "RENE"
 //
-// toLowerCase
+// - toLowerCase
 // console.log(name.toLowerCase()); // "rene"
 //
-// indexOf
+// - indexOf
 // console.log(name.indexOf('e')); // 1
 //
-// substring
+// - substring
 // console.log(name.substring(2, 4)); // "ne"
 //
-// AUFGABE 1
+// AUFGABE 1:
 // Filename.Extension
+// Get the filename and extension from a string and print it to the console.
+//
+// SOLUTION:
 // const filename = "music.mp3";
 // const index = filename.indexOf('.');
 // const name = filename.substring(0, index);
 // console.log('name', name);
-//
 // const extension = filename.substring(index + 1);
 // console.log('extension', extension);
 
@@ -170,7 +169,7 @@
 // 7. String Interpolation
 // --------------------------------------------------------
 // In computer programming, string interpolation is the process
-// of evaluating a string literal containing one or more placeholders
+// of evaluating a string literal containing one or more placeholders.
 //
 // const name = "Rene";
 // const country = "Austria";
@@ -194,19 +193,24 @@
 // Function call
 // myFunction("Rene");
 //
-// AUFGABE 2
+// AUFGABE 2:
 // Lesen Sie zwei Zahlen über das `prompt` ein und rufen Sie `add` zum addieren auf.
 // Geben Sie das Ergebnis in ein `alert` aus.
-// Bonus: Zahlen dürfen nicht negative sein, falls ja Fehler mit `alert` und abbruch.
+// Bonus 1: Lesen Sie solange eine Zahl ein, bis sie eine positive Zahl eingeben.
+// Bonus 2: Lesen Sie den Operator (+, -, *, /) ein und rufen Sie `calculate` auf.
 // Note: Number(string) -> number -or- parseInt(string, radix)-> number
 // prompt() -> string
 // alert() -> void
 //
+// SOLUTION 1:
 // let number1 = +prompt("Geben Sie eine Zahl ein");
 // let number1 = parseInt(prompt("Geben Sie eine Zahl ein"));
 // const number1 = Number(prompt("Geben Sie eine 1. Zahl ein"));
 // const number2 = Number(prompt("Geben Sie eine 2. Zahl ein"));
-
+// const sum = add(number1, number2);
+// alert(`Die Summe der zwei Zahlen ${number1} und ${number2} ist ${sum}`);
+//
+// SOLUTION 2:
 const number1 = getNumber();
 const number2 = getNumber();
 const operator = getOperator();
