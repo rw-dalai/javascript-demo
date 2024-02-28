@@ -176,7 +176,7 @@
 // console.log(`Hello, my name is ${name} and I am from ${country}`);
 
 
-// 7. Functions
+// 8. Functions
 // --------------------------------------------------------
 // Function is a block of code that can be called and executed later.
 // Function can take parameters and return a value.
