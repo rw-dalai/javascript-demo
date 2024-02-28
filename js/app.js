@@ -103,13 +103,25 @@
 // const bool = !!42;
 
 
-// 5. Comparison
+// 5. Comparison Operators
 // --------------------------------------------------------
 // == compares values (using type coercion)
 // "42" == 42 // true
 //
 // === compares values and types (strict equality)
 // "42" === 42 // false
+//
+// String comparison using lexicographical order
+// "apple" === "banana" // false
+// "apple" < "banana" // true
+// "apple" > "banana" // false
+//
+// String comparison using localeCompare
+// compares two strings against the current locale of the user
+// "Strasse".localeCompare("straße", "de", {sensitivity: "base"})    // base: equal
+// "Straße".localeCompare("Strasse", "de", {sensitivity: "accent"})  // accent: ß != ss
+// "Strasse".localeCompare("straße", "de", {sensitivity: "case"})    // case: S != s
+// "Strasse".localeCompare("straße", "de", {sensitivity: "variant"}) // variant: ß != ss, S != s
 
 
 // 6. String Functions
