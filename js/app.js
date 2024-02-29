@@ -74,7 +74,13 @@
 
 // 4. Type Conversion and Coercion
 // --------------------------------------------------------
-// 4a. Converting (Explicit Type Conversion)
+// 4a. Check for primitive data types with `typeof`
+// CAUTION: typeof has its limitation, we talk about that later !
+// typeof "apple"  // string
+// typeof 42       // number
+// typeof true     // boolean
+//
+// 4b. Converting (Explicit Type Conversion)
 // - String -> Number
 // const str = "42";
 // console.log(typeof str); // "string"
@@ -89,7 +95,7 @@
 // const str2 = String(str);
 // console.log(typeof str); // "string"
 //
-// 4b. Coercion (Implicit Type Conversion)
+// 4c. Coercion (Implicit Type Conversion)
 // - Coercion String
 // const str = "42" + 42;
 //
@@ -194,28 +200,14 @@
 // myFunction("Rene");
 //
 // AUFGABE 2:
-// Lesen Sie zwei Zahlen über das `prompt` ein und rufen Sie `add` zum addieren auf.
-// Geben Sie das Ergebnis in ein `alert` aus.
+// Lesen Sie zwei Zahlen über das `prompt` ein und schreiben Sie eine `add` Function,
+// die zwei Zahlen addiert. Geben Sie das Ergebnis in ein `alert` aus.
 // Bonus 1: Lesen Sie solange eine Zahl ein, bis sie eine positive Zahl eingeben.
 // Bonus 2: Lesen Sie den Operator (+, -, *, /) ein und rufen Sie `calculate` auf.
 // Note: Number(string) -> number -or- parseInt(string, radix)-> number
 // prompt() -> string
 // alert() -> void
 //
-// SOLUTION 1:
-// let number1 = +prompt("Geben Sie eine Zahl ein");
-// let number1 = parseInt(prompt("Geben Sie eine Zahl ein"));
-// const number1 = Number(prompt("Geben Sie eine 1. Zahl ein"));
-// const number2 = Number(prompt("Geben Sie eine 2. Zahl ein"));
-// const sum = add(number1, number2);
-// alert(`Die Summe der zwei Zahlen ${number1} und ${number2} ist ${sum}`);
-//
-// SOLUTION 2:
-const number1 = getNumber();
-const number2 = getNumber();
-const operator = getOperator();
-const summe = calculate(number1, number2);
-alert(`Die Summe der zwei Zahlen ${number1} und ${number2} ist ${summe}`)
 
 function getOperator() {
   // TODO
@@ -234,16 +226,6 @@ function getNumber() {
 function calculate(zahl1, zahl2, operator) {
   // TODO
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
