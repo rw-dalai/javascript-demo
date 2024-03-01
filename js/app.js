@@ -214,12 +214,11 @@ function getOperator() {
 }
 
 function getNumber() {
-  let number = Number(prompt("Geben Sie eine Zahl ein"));
-  while (number < 0) {
-    alert(`Fehler ${number} darf nicht kleiner 0 sein`);
-    number = Number(prompt("Geben Sie eine Zahl ein"));
-  }
-  return number;
+  // TODO
+}
+
+function add() {
+  // TODO
 }
 
 // "+", "-", "*", "/"
