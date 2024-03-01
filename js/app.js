@@ -217,7 +217,7 @@ function getNumber() {
   // TODO
 }
 
-function add() {
+function add(zahl1, zahl2) {
   // TODO
 }
 
