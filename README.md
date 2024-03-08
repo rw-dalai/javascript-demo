@@ -12,4 +12,8 @@
 
 ## 6. String Functions
 
-## 7. Functions
+## 7. String Interpolation
+
+## 8. Functions
+
+## 9. Objects
