@@ -209,22 +209,128 @@
 // alert() -> void
 //
 
-function getOperator() {
-  // TODO
-}
+// function getOperator() {
+// TODO
+// }
 
-function getNumber() {
-  // TODO
-}
+// function getNumber() {
+// TODO
+// }
 
-function add(zahl1, zahl2) {
-  // TODO
-}
+// function add(zahl1, zahl2) {
+// TODO
+// }
 
 // "+", "-", "*", "/"
-function calculate(zahl1, zahl2, operator) {
-  // TODO
+// function calculate(zahl1, zahl2, operator) {
+// TODO
+// }
+
+
+// 9. Objects
+// --------------------------------------------------------
+// Objects are a collection of key/value pairs.
+// Values can be primitive types, reference types (objects, arrays, functions)
+// Objects are a recursive data structure (objects can contain objects)
+
+// - Object Literal Syntax
+const margaritha = {
+  name: "margaritha",
+  size: 30,
+  isSpicy: false,
+  price: 10.5,
+  info: {
+    description: "This pizza tastes super delicious",
+    allergies: ["nuts", "gluten"]
+  },
+
+  sayPizzaName: function () {
+    console.log(`This pizza is ${this.name}`);
+  },
+
+  // called when the object is used in the `string` context:
+  // e.g. alert(margarithaPizza);
+  toString: function () {
+    return `name: ${this.name}, size: ${this.size}`;
+  },
+
+  // called when the object is used in the `number` context:
+  // e.g. alert(+margarithaPizza);
+  valueOf: function () {
+    return this.size;
+  }
+};
+
+
+// - Update Value
+// dot notation
+margaritha.name = "tonno";
+
+// bracket notation
+margaritha["name"] = "tonno";
+
+// bracket notation with variable
+const key = "name";
+margaritha[key] = "tonno";
+
+
+// - Add Key
+// dot notation
+margaritha.isDelicious = "very delicious";
+
+// bracket notation
+margaritha["isDelicious"] = "very delicious";
+
+// bracket notation with variable
+const key2 = "isDelicious";
+margaritha[key2] = "very delicious";
+
+
+// - Delete Key
+delete margaritha.isDelicious;
+delete margaritha["isDelicious"];
+
+
+// - Comparison
+const obj1 = {name: "Rene"};
+const obj2 = {name: "Rene"};
+console.log(obj1 === obj2); // false
+const obj3 = obj1;
+console.log(obj1 === obj3); // true
+
+
+// - Iterate over Objects
+
+// for-in loop VS for-of loop
+// for-in loop works with all objects
+// for-of loop works only with iterable objects (arrays, strings, maps, sets)
+
+// Object.keys returns an array of keys
+// Object.values returns an array of values
+// Object.entries returns an array of key-value pairs
+const keys = Object.keys(margaritha); // ["name", "size", "isSpicy", ...]
+const values = Object.values(margaritha); // ["tonno", 30, false, ...]
+
+// for-in loop
+for (let key in margaritha) {
+  console.log(key, margaritha[key]);
 }
+
+// for-of loop with Object.keys
+for (let key of Object.keys(margaritha)) {
+  console.log(key);
+}
+
+// for-of loop with Object.values
+for (let value of Object.values(margaritha)) {
+  console.log(value);
+}
+
+// for-of loop with Object.entries
+for (let entry of Object.entries(margaritha)) {
+  console.log(entry);
+}
+
 
 
 
