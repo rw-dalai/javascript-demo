@@ -244,19 +244,19 @@ const margaritha = {
     allergies: ["nuts", "gluten"]
   },
 
-  sayPizzaName: function () {
+  sayPizzaName: function() {
     console.log(`This pizza is ${this.name}`);
   },
 
   // called when the object is used in the `string` context:
   // e.g. alert(margarithaPizza);
-  toString: function () {
+  toString: function() {
     return `name: ${this.name}, size: ${this.size}`;
   },
 
   // called when the object is used in the `number` context:
   // e.g. alert(+margarithaPizza);
-  valueOf: function () {
+  valueOf: function() {
     return this.size;
   }
 };
@@ -310,6 +310,11 @@ console.log(obj1 === obj3); // true
 // Object.entries returns an array of key-value pairs
 const keys = Object.keys(margaritha); // ["name", "size", "isSpicy", ...]
 const values = Object.values(margaritha); // ["tonno", 30, false, ...]
+
+// for loop
+for (let i = 0; i < keys.length; i++) {
+  console.log(keys[i], margaritha[keys[i]]);
+}
 
 // for-in loop
 for (let key in margaritha) {
