@@ -299,7 +299,7 @@ const obj3 = obj1;
 console.log(obj1 === obj3); // true
 
 
-// - Iterate over Objects
+// - Iteration
 
 // for-in loop VS for-of loop
 // for-in loop works with all objects
