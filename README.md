@@ -16,4 +16,10 @@
 
 ## 8. Functions
 
-## 9. Objects
+## 9. Objects Basics
+
+## 10. Arrays Basics
+
+## 11. Lambdas
+
+## 12. Arrays Advanced
