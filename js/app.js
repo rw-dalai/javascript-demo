@@ -227,11 +227,12 @@
 // }
 
 
-// 9. Objects
+// 9. Objects Basics
 // --------------------------------------------------------
-// Objects are a collection of key/value pairs.
+// Objects are an unordered collection of key/value pairs.
 // Values can be primitive types, reference types (objects, arrays, functions)
 // Objects are a recursive data structure (objects can contain objects)
+// Objects can be iterated over with for-in loop.
 
 // - Object Literal Syntax
 const margaritha = {
@@ -301,41 +302,229 @@ console.log(obj1 === obj3); // true
 
 // - Iteration
 
-// for-in loop VS for-of loop
-// for-in loop works with all objects
-// for-of loop works only with iterable objects (arrays, strings, maps, sets)
-
-// Object.keys returns an array of keys
-// Object.values returns an array of values
-// Object.entries returns an array of key-value pairs
-const keys = Object.keys(margaritha); // ["name", "size", "isSpicy", ...]
-const values = Object.values(margaritha); // ["tonno", 30, false, ...]
-
-// for loop
-for (let i = 0; i < keys.length; i++) {
-  console.log(keys[i], margaritha[keys[i]]);
-}
-
-// for-in loop
+// 1. for-in loop (can be used with objects)
+// The for in loop iterates over keys in an object
 for (let key in margaritha) {
-  console.log(key, margaritha[key]);
+  const value = margaritha[key];
+  console.log(key, value);
 }
 
-// for-of loop with Object.keys
-for (let key of Object.keys(margaritha)) {
-  console.log(key);
+// 2. for-of loop with Object.keys
+// The for of loop iterates over values in the array `allKeys`.
+const allKeys = Object.keys(margaritha);
+// console.log(allKeys); // ["name", "size", "isSpicy", ..]
+for (let key of allKeys) {
+  const value = margaritha[key];
+  console.log(key, value);
 }
 
-// for-of loop with Object.values
-for (let value of Object.values(margaritha)) {
+// 3. for-of loop with Object.values
+// The for of loop iterates over values in the array `allValues`.
+const allValues = Object.values(margaritha);
+// console.log(allValues) // ["tonno", 30, false, ..]
+for (let value of allValues) {
   console.log(value);
 }
 
-// for-of loop with Object.entries
-for (let entry of Object.entries(margaritha)) {
+// 4. for-of loop with Object.entries
+// The for of loop iterates over entries in the array `allEntries`.
+let allEntries = Object.entries(margaritha);
+// console.log(allEntries) // [["name", "tonno"], ["size", 30], ["isSpicy", false], ..]
+for (let entry of allEntries) {
   console.log(entry);
 }
 
+// 5. classic counting loop (usually not used with objects)
+const allKeys2 = Object.keys(margaritha);
+// console.log(allKeys2); // ["name", "size", "isSpicy", ..]
+for (let i = 0; i < allKeys.length; i++) {
+  let key = allKeys2[i];
+  let value = margaritha[key];
+  console.log(key, value);
+}
+
+
+// 10. Arrays Basics
+// --------------------------------------------------------
+// Arrays are an ordered collection of key/value pairs.
+// Values can be primitive types, reference types (objects, arrays, functions)
+// Arrays are a special type of object
+// Arrays are iterable objects (-> for-of loop)
+
+// - Array Literal Syntax
+const arr = [22, 33, 44, 55];
+
+// Arrays have a length property (-> arr.length)
+console.log(arr.length);
+
+
+// - Access the first element
+console.log(arr[0]);
+
+// - Access the last element
+console.log(arr[arr.length - 1]);
+
+
+// - Update Value
+arr[0] = 11;
+arr[arr.length - 1] = 66;
+
+
+// - Add Value
+arr.push(66);
+
+// - Delete Value
+arr.pop();
+
+// Delete the first element
+arr.shift();
+
+// Add a value at the beginning
+arr.unshift(11);
+
+
+// - Comparison
+const arr1 = [1, 2, 3];
+const arr2 = [1, 2, 3];
+console.log(arr1 === arr2); // false
+const arr3 = arr1;
+console.log(arr1 === arr3); // true
+
+
+// - Iteration
+
+// 1. for-of loop
+// We can use the for-of loop with arrays, because arrays are iterable objects.
+for (let value of arr) {
+  console.log(value);
+}
+
+// 2. classic counting loop
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+
+// 10. Lambda Functions
+// --------------------------------------------------------
+// Lambda functions are anonymous functions (a function without a name)
+// Lambda functions are also called arrow functions
+// Lambda functions are a shorthand for writing functions
+
+// - Function Declaration
+function add(a, b) {
+  return a + b;
+}
+
+// - Function Expression assigned to a variable
+const add1 = function(a, b) {
+  return a + b;
+};
+
+// - Lambda Expression assigned to a variable
+const add2 = (a, b) => a + b;
+
+// - Lambda Expression with Block assigned to a variable
+const add3 = (a, b) => {
+  return a + b;
+};
+
+// - Lambda Expression with no parameters
+const hello = () => "Hello World";
+
+// - Lambda Expression with one parameter
+const double = a => a * 2;
+
+
+
+// 11. Arrays Advanced
+// --------------------------------------------------------
+// Lets explore some advanced array methods like `map` and `filter`.
+
+// A fruit array with objects
+const fruits = [
+  { name: "apple", symbol: "🍎", isDelicious: true },
+  { name: "peach", symbol: "🍑", isDelicious: false },
+  { name: "ananas", symbol: "🍍", isDelicious: true },
+  { name: "strawberry", symbol: "🍓", isDelicious: true },
+];
+
+
+// --------------------------------------------------------
+// 1. Filter the fruit array to get only delicious fruits
+// --------------------------------------------------------
+
+// - IMPERATIVE SOLUTION
+// It's called imperative, because we tell the computer how to do it.
+// Imperative solutions are often longer and harder to read because using for loops and if statements.
+const filteredFruits = [];
+for (let item of fruits) {
+  if (item.isDelicious) {
+    filteredFruits.push(item);
+  }
+}
+
+// - FUNCTIONAL / DECLARATIVE SOLUTION WITH `FILTER` METHOD
+// It's called functional, because we tell the computer what to do.
+// Functional solutions are often shorter and easier to read because using functional methods with readable names.
+
+// The `filter` method creates a new array with all elements that pass the test (called the `predicate`) implemented by the provided function.
+// The `filter` method does not change the original array.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+// - With function
+// The function is called with each element in the array.
+const filteredFruits3 = fruits.filter(function(item) {
+  return item.isDelicious; // If the predicate returns true, the item is included in the new array.
+});
+
+// - With lambda
+// The lambda is called with each element in the array.
+const filteredFruits2 = fruits.filter(
+  item => item.isDelicious // If the predicate returns true, the item is included in the new array.
+);
+
+// - OUTPUT of all three solutions
+console.log(filteredFruits);
+console.log(filteredFruits2);
+console.log(filteredFruits3);
+
+
+// --------------------------------------------------------
+// 2. Map the original array into an array of uppercase fruit names
+// --------------------------------------------------------
+
+// - IMPERATIVE SOLUTION
+// It's called imperative, because we tell the computer how to do it.
+// Imperative solutions are often longer and harder to read because using for loops and if statements.
+const mappedFruits = [];
+for (let item of fruits) {
+  let nameUpper = item.name.toUpperCase();
+  mappedFruits.push(nameUpper);
+}
+
+// - FUNCTIONAL / DECLARATIVE SOLUTION WITH `MAP` METHOD
+// It's called functional, because we tell the computer what to do.
+// Functional solutions are often shorter and easier to read because using functional methods with readable names.
+
+// The `map` method creates a new array with the results of calling a provided function on every element in the calling array.
+// The `map` method does not change the original array.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+// - With function
+const mappedFruits2 = fruits.map(function (item) {
+  return item.name.toUpperCase(); // return a value, which is included in the new array
+});
+
+// - With lambda
+const mappedFruits3 = fruits.map(
+  item => item.name.toUpperCase() // return a value, which is included in the new array
+);
+
+// - OUTPUT of all three solutions
+console.log(mappedFruits);
+console.log(mappedFruits2)
+console.log(mappedFruits3)
 
 
 
