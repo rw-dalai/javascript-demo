@@ -423,9 +423,13 @@ const add1 = function(a, b) {
 };
 
 // - Lambda Expression assigned to a variable
+// The `=>` separates the function parameters from the function body
+// If the function body is a single expression, the return keyword is not needed
 const add2 = (a, b) => a + b;
 
 // - Lambda Expression with Block assigned to a variable
+// The `=>` separates the function parameters from the function body
+// If the function body is a block, the return keyword is needed
 const add3 = (a, b) => {
   return a + b;
 };
