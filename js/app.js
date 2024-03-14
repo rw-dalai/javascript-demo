@@ -406,7 +406,7 @@ for (let i = 0; i < arr.length; i++) {
 
 
 
-// 11. Lambda Functions
+// 11. Lambdas
 // --------------------------------------------------------
 // Lambda functions are anonymous functions (a function without a name)
 // Lambda functions are also called arrow functions
@@ -514,12 +514,12 @@ for (let item of fruits) {
 
 // - With function
 const mappedFruits2 = fruits.map(function (item) {
-  return item.name.toUpperCase(); // return a value, which is included in the new array
+  return item.name.toUpperCase(); // Here we `map` the fruit into an uppercase string
 });
 
 // - With lambda
 const mappedFruits3 = fruits.map(
-  item => item.name.toUpperCase() // return a value, which is included in the new array
+  item => item.name.toUpperCase() // Here we `map` the fruit into an uppercase string
 );
 
 // - OUTPUT of all three solutions
