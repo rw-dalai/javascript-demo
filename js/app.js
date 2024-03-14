@@ -405,7 +405,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 
-// 10. Lambda Functions
+// 11. Lambda Functions
 // --------------------------------------------------------
 // Lambda functions are anonymous functions (a function without a name)
 // Lambda functions are also called arrow functions
@@ -437,7 +437,7 @@ const double = a => a * 2;
 
 
 
-// 11. Arrays Advanced
+// 12. Arrays Advanced
 // --------------------------------------------------------
 // Lets explore some advanced array methods like `map` and `filter`.
 
