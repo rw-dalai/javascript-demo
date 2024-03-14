@@ -370,10 +370,10 @@ arr[0] = 11;
 arr[arr.length - 1] = 66;
 
 
-// - Add Value
+// - Add value at the end
 arr.push(66);
 
-// - Delete Value
+// - Delete the last element
 arr.pop();
 
 // Delete the first element
