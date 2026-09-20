@@ -1,0 +1,16 @@
+{
+  "name": "javascript-demo-4",
+  "version": "1.0.0",
+  "description": "The best of the best javasript program this planet has ever seen",
+  "license": "ISC",
+  "author": "Rene Wenz",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "js-basics-demo": "node js-basics-demo.js",
+    "js-input-demo": "node js-input-demo.js"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^8.7.2"
+  }
+}
