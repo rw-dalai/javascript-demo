@@ -137,12 +137,9 @@ function add3(number1, number2)
 }
 
 function isPositiveNumber(value) {
-    // GOOD ENOUGH
+    // GOOD ENOUGH (Infinity slips through)
     return typeof value === "number" && value > 0;
 
-    // BETTER
-    // return !Number.isNaN(value) && value > 0;
-
-    // BEST
+    // BEST (no strings, no NaN, no Infinity)
     // return Number.isFinite(value) && value > 0;
 }
