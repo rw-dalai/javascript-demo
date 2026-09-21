@@ -63,9 +63,9 @@ const customer2 = {
 
     // Array Property
     orders: [
-        { productIds: 1, price: 1.90 },
-        { productIds: 2, price: 1.90 },
-        { productIds: 3, price: 1.90 }
+        { productId: 1, price: 1.90 },
+        { productId: 2, price: 1.90 },
+        { productId: 3, price: 1.90 }
     ],
 
     // Nested Object Property
