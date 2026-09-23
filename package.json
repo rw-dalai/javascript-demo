@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "js-basics-demo": "node js-basics-demo.js",
-    "js-input-demo": "node js-input-demo.js"
+    "js-input-demo": "node js-input-demo.js",
+    "calculator": "node ./calculator/calculator.js"
   },
   "dependencies": {
     "@inquirer/prompts": "^8.7.2"
