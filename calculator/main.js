@@ -1,13 +1,51 @@
-import { input } from '@inquirer/prompts';
+const validOperators = ["+", "-", "*", "/"];
 
-// TODO Read number 1 as long as its not a number
 
-const inputNumber1 = await input({ message: 'Enter number 1' });
-console.log(inputNumber1);
+// --- Read operator ----
 
-// TODO Read number 2
+let operator = await input({ message: 'Enter operator' });
 
-// TODO Read operator
+while(!validOperators.includes(operator)) {
+    // Makes sense if you want to react on the error somehow
+    operator = await input({ message: 'Was not an operator, enter number operator' });
+}
+
+console.log(number1);
+console.log(number2);
+console.log(operator);
+
+
+
+// function isValidOperator(operator) {
+//
+//     return validOperators.includes(operator);
+//
+// }
+
+
+// function isValidOperator(operator) {
+//
+//     const validOperators = ["+", "-", "*", "/"];
+//
+//
+//     for (let i = 0; i < validOperators.length; i++) {
+//         if (validOperators[i] === operator) {
+//             return true;
+//         }
+//     }
+//
+//     return false;
+//
+//
+//     // if (operator === "+") {
+//     //     return true;
+//     // }
+//
+//     // switch (operator) {
+//     //     case "+": return  true;
+//     // }
+//
+// }
 
 // TODO Calculate result
 
