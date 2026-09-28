@@ -1,22 +1,34 @@
-import { input } from '@inquirer/prompts';
+import {input} from '@inquirer/prompts';
 
 
 function calculate(number1, number2, operator) {
     // TODO ...
 }
 
-async function inputOperator(message) {
-    // TODO...
+async function getNumber(message)
+{
+    let userInput = await input({ message: message });
+    return Number(userInput);
 }
 
-async function inputNumber(message) {
+async function inputOperator(message)
+{
+    const validOperators = ["+", "-", "*", "/"];
 
-    let input = await input({ message: message });
-    let number = parseFloat(input);
+    let operator = await input({ message: message });
+    while(!validOperators.includes(operator)) {
+        operator = await input({ message: `Try again: ${message}` });
+    }
 
-    while(!Number.isFinite(number)) {
-        input = await input({ message: message });
-        number = parseFloat(input);
+    return operator;
+}
+
+async function inputNumber(message)
+{
+
+    let number = await getNumber(message);
+    while (Number.isNaN(number)) {
+        number = await getNumber(`Try again: ${message}`)
     }
 
     return number;
@@ -28,7 +40,8 @@ console.log(`Your 1. number is ${number1}`);
 const number2 = await inputNumber("Enter your 2. number");
 console.log(`Your 2. number is ${number2}`);
 
-// TODO input operator
+const operator = await inputOperator("Enter operator");
+console.log(`Your operator is ${operator}`);
 
 // TODO calculate result
 
