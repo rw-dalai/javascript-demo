@@ -1,6 +1,5 @@
 import {input} from '@inquirer/prompts';
 
-
 function calculate(number1, number2, operator) {
     // TODO ...
 }
@@ -43,7 +42,42 @@ console.log(`Your 2. number is ${number2}`);
 const operator = await inputOperator("Enter operator");
 console.log(`Your operator is ${operator}`);
 
-// TODO calculate result
+
+const result = calculate_V2(number1, number2, operator);
+console.log(`Your result is ${result}`);
+
+
+
+// function add(number1, number2) {
+//     return number1 + number2;
+// }
+
+// function sub(number1, number2) {
+//     return number1 - number2;
+// }
+
+// const actions = [add, sub];
+
+
+
+function calculate_V2(number1, number2, operator) {
+
+    // const actions = {
+    //     '+': add,
+    //     '-': sub,
+    // };
+
+    // return actions[operator](number1, number2);
+
+
+    switch (operator) {
+        case '+': return number1 + number2;
+        case '-': return number1 - number2;
+        case '*': return number1 * number2;
+        case '/': return number1 / number2;
+        default: return null;
+    }
+}
 
 // TODO show result
 
