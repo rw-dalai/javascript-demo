@@ -61,6 +61,36 @@ for (let fruit of fruits) {
 const onlySweetFruits_V2 = fruits.filter(fruit => fruit.isSweet);
 
 // map
+// neues array, original untouched (deep copy)
+// nur saures, price * 2
+
+const fruits = [
+    { name: "zitrone", symbol: "🍋", isSweet: false, price: 3.0 },
+];
+
+// fluent api
+// fruits
+//     .filter(fruit => !fruit.isSweet)
+//     .map(function mapper(fruit) {
+//
+//         fruit.price = fruit.price*2;
+//
+//         return fruit;
+//     })
+
+// fruits
+//     .filter(fruit => !fruit.isSweet)
+//     .map(function mapper(fruit) {
+//
+//         const copyFruit = { ...fruit, price: fruit.price*2 };
+//
+//         return copyFruit;
+//     });
+
+
+fruits
+    .filter(fruit => !fruit.isSweet)
+    .map(fruit => ({ ...fruit, price: fruit.price*2 }));
 
 
 
