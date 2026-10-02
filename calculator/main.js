@@ -1,43 +1,14 @@
-const validOperators = ["+", "-", "*", "/"];
+// MAIN.JS
+
+import {inputNumber, inputOperator } from "./input.js";
+import { calculate } from "./calculator.js";
 
 
-
-
-
-
-
-
-// function isValidOperator(operator) {
-//
-//     return validOperators.includes(operator);
-//
-// }
-
-
-// function isValidOperator(operator) {
-//
-//     const validOperators = ["+", "-", "*", "/"];
-//
-//
-//     for (let i = 0; i < validOperators.length; i++) {
-//         if (validOperators[i] === operator) {
-//             return true;
-//         }
-//     }
-//
-//     return false;
-//
-//
-//     // if (operator === "+") {
-//     //     return true;
-//     // }
-//
-//     // switch (operator) {
-//     //     case "+": return  true;
-//     // }
-//
-// }
-
-// TODO Calculate result
-
-// TODO output result
+while (true)
+{
+    const number1 = await inputNumber("Ready number 1");
+    const number2 = await inputNumber("Ready number 2");
+    const operator = await inputOperator("Ready operator");
+    const result = calculate(number1, number2, operator);
+    console.log(result);
+}

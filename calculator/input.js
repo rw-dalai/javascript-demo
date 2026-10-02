@@ -1,11 +1,26 @@
+// INPUT.JS
+//
 import {input} from '@inquirer/prompts';
 
+const validOperators = ["+", "-", "*", "/"];
 
-// --- Read Input Number ✅ ----
+function userExit(userInput)
+{
+    // "exit"
+    if (userInput.toLocaleLowerCase() === "exit") {
+        process.exit();
+    }
+}
 
-async function inputNumber(message) {
 
+// --- Read Input Number ----
+
+export async function inputNumber(message)
+{
+    // suspends the function at await
     let inputNumber = await input({ message: message });
+    userExit(inputNumber);
+
     let number = Number(inputNumber);
 
     while(Number.isNaN(number)) {
@@ -18,10 +33,13 @@ async function inputNumber(message) {
 }
 
 
-// --- Read Operator ✅ ----
+// --- Read Operator ----
 
-async function inputOperator(message) {
+
+export async function inputOperator(message)
+{
     let operator = await input({ message: message });
+    userExit(operator);
 
     while(!validOperators.includes(operator)) {
         // Makes sense if you want to react on the error somehow
@@ -30,11 +48,3 @@ async function inputOperator(message) {
 
     return operator;
 }
-
-
-
-
-
-
-
-
