@@ -1,18 +1,9 @@
 const validOperators = ["+", "-", "*", "/"];
 
 
-// --- Read operator ----
 
-let operator = await input({ message: 'Enter operator' });
 
-while(!validOperators.includes(operator)) {
-    // Makes sense if you want to react on the error somehow
-    operator = await input({ message: 'Was not an operator, enter number operator' });
-}
 
-console.log(number1);
-console.log(number2);
-console.log(operator);
 
 
 
